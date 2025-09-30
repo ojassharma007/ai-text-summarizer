@@ -13,20 +13,43 @@ A **Streamlit application** that summarizes long texts using the Hugging Face `f
 
 ---
 
-## 🛠️ Installation
+## 🛠️ Setup Instructions
 
-**Prerequisites:** Python 3.8+
-
+1. Clone the Repository
 ```bash
-# Clone the repository
 git clone <repository_url>
 cd <repository_name>
+```
 
-# Create a virtual environment
-python -m venv venv
-
-# Activate the virtual environment
+2. Create a Virtual Environment (Recommended)
+```bash
 # Windows
+python -m venv venv
+venv\Scripts\activate
+
+# Linux/macOS
+python -m venv venv
+source venv/bin/activate
+```
+
+3. Install Dependencies
+```bash
+pip install -r requirements.txt
+```
+
+4. Configure Hugging Face API Key
+
+Create a .env file in the project root.
+
+Add your Hugging Face API key:
+```bash
+HF_API_KEY=your_hugging_face_api_key_here
+```
+
+5. Run the Application
+```bash
+streamlit run app.py
+
 ```
 ---
 🔑 Setup API Key
@@ -47,17 +70,12 @@ streamlit run app.py
 ---
 📝 How to Use
 
-Paste your text into the main text area labeled 📄 Paste your text here:.
-
-Optional sidebar adjustments:
-
-Chunk Size (words): Controls text chunking before summarization.
-
-Min/Max Summary Length: Controls the size of the output summary.
-
-Click ✨ Summarize.
-
-The final summary appears below the input box.
+- Paste your text into the main text area labeled 📄 Paste your text here:.
+- Optional sidebar adjustments:
+- Chunk Size (words): Controls text chunking before summarization.
+- Min/Max Summary Length: Controls the size of the output summary.
+- Click ✨ Summarize.
+- The final summary appears below the input box.
 
 📦 Dependencies
 
