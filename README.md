@@ -1,4 +1,5 @@
 📰 AI Text Summarizer
+
 This is a Streamlit application that provides an interactive interface for summarizing long texts using a pre-trained Hugging Face model. It automatically handles texts longer than the model's maximum input size by chunking the text and summarizing each chunk individually.
 
 🚀 Features
