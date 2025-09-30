@@ -1,4 +1,4 @@
-import streamlit as st
+import streamlit as st 
 import requests
 from config import HF_API_KEY
 
