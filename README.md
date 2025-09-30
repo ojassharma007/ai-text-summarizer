@@ -1,80 +1,79 @@
-📰 AI Text Summarizer
+# 📰 AI Text Summarizer
 
-This is a Streamlit application that provides an interactive interface for summarizing long texts using a pre-trained Hugging Face model. It automatically handles texts longer than the model's maximum input size by chunking the text and summarizing each chunk individually.
+A **Streamlit application** that summarizes long texts using the Hugging Face `facebook/bart-large-cnn` model. The app automatically splits texts that exceed the model’s input limit into chunks and summarizes each chunk individually.
 
-🚀 Features
-Text Summarization: Uses the powerful facebook/bart-large-cnn model from Hugging Face for abstractive summarization.
+---
 
-Text Chunking: Automatically breaks down large texts into smaller chunks (default: 120 words) to handle model input limits.
+## 🚀 Features
 
-Customizable Settings: Allows users to adjust:
+- **Text Summarization:** Uses a pre-trained Hugging Face model for abstractive summarization.  
+- **Text Chunking:** Automatically splits large texts into smaller chunks (default: 120 words).  
+- **Customizable Settings:** Adjust chunk size and summary length for precise control.  
+- **Simple Web UI:** Intuitive interface built with Streamlit.  
 
-Chunk Size: Control the word limit for each text chunk.
+---
 
-Summary Length: Set minimum and maximum word lengths for the generated summary.
+## 🛠️ Installation
 
-Simple Web UI: An intuitive interface built with Streamlit.
+**Prerequisites:** Python 3.8+
 
-🛠️ Installation
-Prerequisites
-You need Python 3.8+ installed on your system.
-
-Steps
-Clone the repository (if it were a git repo):
-
-Bash
-
+```bash
+# Clone the repository
 git clone <repository_url>
 cd <repository_name>
-Create a virtual environment and activate it (recommended):
 
-Bash
-
+# Create a virtual environment
 python -m venv venv
-source venv/bin/activate  # On Linux/macOS
-venv\Scripts\activate     # On Windows
-Install the dependencies from requirements.txt:
 
-Bash
+# Activate the virtual environment
+# Windows
+```
+---
+🔑 Setup API Key
 
-pip install -r requirements.txt
-The main dependencies for the app's functionality are 
+This project uses the Hugging Face API for model access.
 
-streamlit, requests, and python-dotenv.
+Create a .env file in the root directory.
 
-Set up your API Key:
-
-This project uses a Hugging Face API key for accessing the summarization model.
-
-Create a file named .env in the root directory.
-
-Add your Hugging Face API key to the file in the following format:
-
-Ini, TOML
-
+Add your Hugging Face API key:
+```bash
 HF_API_KEY=your_hugging_face_api_key_here
+```
 
-Note: The .env file is excluded from version control by the .gitignore file for security.
-
-▶️ How to Run
-Make sure your virtual environment is active and dependencies are installed.
-
-Run the Streamlit application from your terminal:
-
-Bash
-
+Running the App
+```bash
 streamlit run app.py
-The application will open in your default web browser (usually at http://localhost:8501).
+```
+---
+📝 How to Use
 
-📝 How to Use the App
-Paste your text into the main text area labeled "📄 Paste your text here:".
+Paste your text into the main text area labeled 📄 Paste your text here:.
 
-(Optional) Adjust settings in the sidebar:
+Optional sidebar adjustments:
 
-Use the "Chunk Size (words)" slider to change how large the text chunks are before they are sent to the model (default is 120 words).
+Chunk Size (words): Controls text chunking before summarization.
 
-Adjust "Min Summary Length" and "Max Summary Length" to control the size of the output summary.
+Min/Max Summary Length: Controls the size of the output summary.
 
-Click the "✨ Summarize" button.
+Click ✨ Summarize.
 
-The final, complete summary will appear below the input box under the "📝 Summary:" heading.
+The final summary appears below the input box.
+
+📦 Dependencies
+
+The minimal dependencies required to run the app are:
+
+- streamlit
+- requests
+- python-dotenv
+- transformers
+- torch
+  
+⚡ Notes
+Handles long texts by chunking and summarizing each part separately.
+Designed for simplicity and easy deployment.
+
+
+
+
+
